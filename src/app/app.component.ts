@@ -3,6 +3,10 @@ import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
+import { AccountPage } from '../account/account';
+
 import {
   Push,
   PushToken
@@ -13,7 +17,8 @@ import {
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = HomePage;
+  rootPage = TabsPage;
+  //rootPage = LoginPage;
 
   constructor(platform: Platform, public push: Push) {
     platform.ready().then(() => {
@@ -22,7 +27,7 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
-      this.push.register().then((t: PushToken) => {
+    /*  this.push.register().then((t: PushToken) => {
       return this.push.saveToken(t);
     }).then((t: PushToken) => {
       console.log('Token saved:', t.token);
@@ -30,7 +35,7 @@ export class MyApp {
     this.push.rx.notification()
   .subscribe((msg) => {
     alert(msg.title + ': ' + msg.text);
-  });
+  });*/
   }
 
 

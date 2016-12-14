@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+    <ion-icon name="person"></ion-icon>  Login
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<!--
+<ion-content padding>
+  The world is your oyster.
+  <p>
+    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+  </p>
+</ion-content>
+-->
+<!--
+<ion-content class="has-header" padding align="center">
+    <form [ngFormModel]="loginForm" (submit)="login($event,username,password,rememberMe)" style="padding-top: 50px">
+        <ion-list no-lines>
+            <ion-item>
+                <ion-label  stacked-label>{{'login.username' | translate}}</ion-label>
+                <ion-input type="text" [(ngModel)]="username" placeholder="admin" ngControl="username"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label stacked-label>{{'login.password' | translate}}</ion-label>
+                <ion-input type="password" [(ngModel)]="password" placeholder="admin" ngControl="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked-label>{{'login.remember-me' | translate}}</ion-label>
+                <ion-checkbox dark [(ngModel)]="rememberMe" ngControl="rememberMe"></ion-checkbox>
+            </ion-item>
+        </ion-list>
+        <div>Credentials: admin/admin</div>
+        <div>
+            <button block type="submit" [disabled]="!loginForm.valid">{{'buttons.login' | translate}}</button>
+        </div>
+    </form>
+</ion-content>-->
+<ion-content class="has-header" padding align="center">
+  <form (ngSubmit)="login()" [formGroup]="userForm" style="padding-top: 50px">
+  <ion-list no-lines>
+
+    <ion-item>
+      <ion-label color="dark" stacked>  Mail</ion-label>
+      <ion-input formControlName="username" type="text" placeholder="Mail"></ion-input>
+      <div *ngIf="userForm.get('username').hasError('required')">L'adresse email ne doit pas être vide .</div>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="dark" stacked>Mot de passe</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Mot de passe" ></ion-input>
+      <div *ngIf="userForm.get('password').hasError('required')">Le mot de passe ne doit pas être vide .</div>
+    </ion-item>
+
+
+  <div padding>
+    <button ion-button color="dark" type="submit" [disabled]="!userForm.valid">Connexion</button>
+  </div>
+  </ion-list>
+</form>
+</ion-content>
