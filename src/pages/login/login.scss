@@ -1,0 +1,30 @@
+ion-input
+{
+  border : 1px solid black;
+  height: 50px;
+  margin-top: 10px;
+}
+.input-has-focus .label-md[stacked]
+{
+  color : black;
+}
+
+.item-label-stacked .text-input-md
+{
+  height: 50px;
+}
+button[type="submit"]
+{
+  height: 50px;
+  span
+  {
+    font-size: 26px;
+  }
+}
+.btn-signup
+{
+  border: 1px solid black;
+}
+p{
+  cursor: pointer;
+}

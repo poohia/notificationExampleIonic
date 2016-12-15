@@ -1,10 +1,10 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
     <ion-icon name="person"></ion-icon>  Login
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 <!--
 <ion-content padding>
   The world is your oyster.
@@ -39,24 +39,28 @@
 </ion-content>-->
 <ion-content class="has-header" padding align="center">
   <form (ngSubmit)="login()" [formGroup]="userForm" style="padding-top: 50px">
+    <img src="http://www.brocantelab.com/skin/frontend/ultimo/brocante/images/logo-selency-brocantelab.png" alt="salency logo" />
   <ion-list no-lines>
 
     <ion-item>
-      <ion-label color="dark" stacked>  Mail</ion-label>
-      <ion-input formControlName="username" type="text" placeholder="Mail"></ion-input>
+      <ion-label color="dark" stacked>  E-mail</ion-label>
+      <ion-input formControlName="username" type="email" placeholder="" color="dark"></ion-input>
       <div *ngIf="userForm.get('username').hasError('required')">L'adresse email ne doit pas être vide .</div>
     </ion-item>
 
     <ion-item>
       <ion-label color="dark" stacked>Mot de passe</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Mot de passe" ></ion-input>
+      <ion-input formControlName="password" type="password" placeholder="" color="dark"></ion-input>
       <div *ngIf="userForm.get('password').hasError('required')">Le mot de passe ne doit pas être vide .</div>
     </ion-item>
 
 
   <div padding>
-    <button ion-button color="dark" type="submit" [disabled]="!userForm.valid">Connexion</button>
+    <button ion-button color="dark" type="submit"  full>SE CONNECTER</button>
   </div>
   </ion-list>
 </form>
+<p (click)="forgetPassword()" style="text-decoration: underline;">Mot de passe oublié?</p>
+<p >Pas encore de compte?</p>
+<button ion-button class="btn-signup" type="submit" color="white" full (click)="signup()">S'INSCRIRE</button>
 </ion-content>

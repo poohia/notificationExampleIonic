@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import {HttpLoginService} from '../../app/providers/login.service';
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
+import { ForgetPasswordPage } from '../password/forgetPassword';
+import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-home',
@@ -22,5 +24,13 @@ export class LoginPage {
   {
      //console.log(this.userForm.value);
      this.loginService.connect(this.userForm.value).subscribe(() => this.navCtrl.push(TabsPage));
+  }
+  forgetPassword()
+  {
+    this.navCtrl.push(ForgetPasswordPage);
+  }
+  signup()
+  {
+      this.navCtrl.push(SignupPage);
   }
 }

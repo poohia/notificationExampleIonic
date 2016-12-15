@@ -7,7 +7,12 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AccountPage } from '../pages/account/account';
-
+import { HomeAccountPage } from '../pages/account/home';
+import {ChangePasswordPage} from '../pages/password/changePassword';
+import {ForgetPasswordPage} from '../pages/password/forgetPassword';
+import {SignupPage} from '../pages/signup/signup';
+import {SendOrderPage} from '../pages/order/sendOrder';
+import {ValidOrderPage} from '../pages/order/validOrder';
 import {HttpLoginService} from './providers/login.service';
 import {StorageService} from './providers/storage.service';
 import {UserService} from './providers/user.service';
@@ -38,7 +43,13 @@ const cloudSettings: CloudSettings = {
     HomePage,
     LoginPage,
     TabsPage,
-    AccountPage
+    AccountPage,
+    ChangePasswordPage,
+    ForgetPasswordPage,
+    SignupPage,
+    SendOrderPage,
+    ValidOrderPage,
+    HomeAccountPage
   ],
   imports: [
     IonicModule.forRoot(MyApp,{tabsPlacement: 'bottom',
@@ -54,7 +65,13 @@ const cloudSettings: CloudSettings = {
     HomePage,
     LoginPage,
     TabsPage,
-    AccountPage
+    AccountPage,
+    ChangePasswordPage,
+    ForgetPasswordPage,
+    SignupPage,
+    SendOrderPage,
+    ValidOrderPage,
+    HomeAccountPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, HttpLoginService, StorageService,  Storage,UserService]
 })

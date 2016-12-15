@@ -18,7 +18,7 @@ export class HttpLoginService {
 
    constructor(private http: Http, private storage:StorageService)
    {
-     console.log(this.urls);
+     
    }
 
    connect(ids:any)

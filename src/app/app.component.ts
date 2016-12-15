@@ -17,8 +17,8 @@ import {
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = TabsPage;
-  //rootPage = LoginPage;
+  //rootPage = TabsPage;
+  rootPage = LoginPage;
 
   constructor(platform: Platform, public push: Push) {
     platform.ready().then(() => {
@@ -27,7 +27,7 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
-    /*  this.push.register().then((t: PushToken) => {
+    this.push.register().then((t: PushToken) => {
       return this.push.saveToken(t);
     }).then((t: PushToken) => {
       console.log('Token saved:', t.token);
@@ -35,7 +35,7 @@ export class MyApp {
     this.push.rx.notification()
   .subscribe((msg) => {
     alert(msg.title + ': ' + msg.text);
-  });*/
+  }); 
   }
 
 

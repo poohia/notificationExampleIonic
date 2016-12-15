@@ -17,8 +17,13 @@ export class StorageService {
       this.storage.set('token', token);
 
     }
-    getToken()
+    getToken(callback)
     {
-      return this.storage.get('token');
+      this.storage.get('token').then((token) => { callback(token);});
+
+    }
+    getUser()
+    {
+      return this.storage.get('user').then((user) => { return user;});
     }
 }

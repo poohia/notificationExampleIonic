@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar hideBackButton="true">
+  <ion-navbar >
     <ion-title>
       Mon compte
     </ion-title>
@@ -7,8 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="user != null" text-center	 >
+
+        <img src="{{origin_src}}{{user.local.avatar}}" text-center>
+        <br /><br />
+        <div text-left><label>Email: </label>{{user.local.email}}</div>
+        <div text-left><label>Pseudo: </label>{{user.local.name}}</div>
+        <div text-left><label>Sexe: </label>{{user.local.sexe}}</div>
+        <br /> <br />
+        <button ion-button (click)="changePassword()" color="dark" full>Modifier le mot de passe</button>
+        <button ion-button color="white"  style="border: 1px solid black" full>Déconnexion</button>
+
+
+
+</div>
+<div *ngIf="user == null" text-center	 >
+<ion-spinner></ion-spinner>
+</div>
 </ion-content>

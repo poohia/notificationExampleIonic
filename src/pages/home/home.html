@@ -1,14 +1,28 @@
 <ion-header>
   <ion-navbar hideBackButton="true">
     <ion-title>
-      Brocante Lab
+      Actualités
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="https://notificationexample-jordanazoulay.c9users.io/images/136547-718431.png" alt="bureau vintage">
+      </ion-thumbnail>
+      <h2>A expedier</h2>
+      <p>Bureau vintage</p>
+      <button ion-button clear item-right color="dark" (click)="sendOrder()">  <ion-icon name="arrow-forward"></ion-icon>&nbsp;</button>
+    </ion-item>
+    <ion-item>
+    <ion-thumbnail item-left>
+      <img src="https://notificationexample-jordanazoulay.c9users.io/images/133900-704045.png" alt="aire de chaises Louis XVI">
+    </ion-thumbnail>
+    <h2>A confirmer</h2>
+    <p>Paire de chaises Louis XVI</p>
+    <button ion-button clear item-right color="dark" (click)="validOrder()">  <ion-icon name="arrow-forward"></ion-icon>&nbsp;</button>
+  </ion-item>
+  </ion-list>
 </ion-content>
