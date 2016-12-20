@@ -18,7 +18,7 @@ export class HttpLoginService {
 
    constructor(private http: Http, private storage:StorageService)
    {
-     
+
    }
 
    connect(ids:any)
@@ -60,7 +60,7 @@ export class HttpLoginService {
    handleError(error) {
      console.log("error !");
         console.error(error.status);
-        return "blabla" ;
+        return "b" ;
 
     }
    private setHeader()

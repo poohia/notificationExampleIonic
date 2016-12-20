@@ -52,11 +52,8 @@ const cloudSettings: CloudSettings = {
     HomeAccountPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp,{tabsPlacement: 'bottom',
-      platforms: {
-        ios: {
-          tabsPlacement: 'top',
-        }}}),
+    IonicModule.forRoot(MyApp,{tabsPlacement: 'bottom'}
+      ),
     CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
